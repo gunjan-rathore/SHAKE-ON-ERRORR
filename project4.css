@@ -1,0 +1,116 @@
+body {
+    font-family: sans-serif;
+    background-color: honeydew;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.calculator {
+    background: linear-gradient(120deg, red, darkred);
+    border-radius: 8px;
+    padding: 20px;
+    width: 520px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.calculator::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg, pink, red);
+    z-index: -1;
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.calculator h1 {
+    font-size: 34px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+
+.input-section {
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.input-section label {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: aliceblue;
+}
+
+.input-section input[type="range"] {
+    width: 100%;
+    cursor: pointer;
+}
+
+.input-section span {
+    display: block;
+    color: white;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: darkgreen;
+}
+
+.output-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.output-section p {
+    margin: 5px 0;
+    font-size: 18px;
+    color: white;
+}
+
+input[type="range"] {
+    appearance: none;
+    height: 8px;
+    background: #ddd;
+    border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background-color: green;
+    border-radius: 50%;
+    cursor: pointer;
+}
